@@ -29,17 +29,17 @@ const FriendRequest = ({ request }) => {
 	});
 
 	return (
-		<div className='bg-white rounded-lg shadow p-4 flex items-center justify-between transition-all hover:shadow-md'>
-			<div className='flex items-center gap-4'>
+		<div className='bg-white rounded-lg shadow py-4 px-2 md:px-4 flex items-center justify-between transition-all hover:shadow-md '>
+			<div className='flex items-center gap-4 '>
 				<Link to={`/profile/${request.sender.username}`}>
 					<img
 						src={request.sender.profilePicture || "/avatar.png"}
 						alt={request.name}
-						className='w-16 h-16 rounded-full object-cover'
+						className=' w-16 h-16   rounded-full object-cover'
 					/>
 				</Link>
 
-				<div>
+				<div   className=" " >
 					<Link to={`/profile/${request.sender.username}`} className='font-semibold text-lg'>
 						{request.sender.name}
 					</Link>
@@ -47,15 +47,15 @@ const FriendRequest = ({ request }) => {
 				</div>
 			</div>
 
-			<div className='space-x-2'>
+			<div className='flex justify-end flex-col md:flex-row'>
 				<button
-					className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors'
+					className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors m-1'
 					onClick={() => acceptConnectionRequest(request._id)}
 				>
 					Accept
 				</button>
 				<button
-					className='bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors'
+					className='bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors m-1'
 					onClick={() => rejectConnectionRequest(request._id)}
 				>
 					Reject

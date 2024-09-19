@@ -88,7 +88,11 @@ const NotificationsPage = () => {
 					<img src={relatedPost.image} alt='Post preview' className='w-10 h-10 object-cover rounded' />
 				)}
 				<div className='flex-1 overflow-hidden'>
-					<p className='text-sm text-gray-600 truncate'>{relatedPost.content}</p>
+				<p className='text-sm text-gray-600 truncate'>
+	{relatedPost.content.length > 30
+		? `${relatedPost.content.slice(0, 30)}...`
+		: relatedPost.content}
+</p>
 				</div>
 				<ExternalLink size={14} className='text-gray-400' />
 			</Link>
@@ -101,7 +105,7 @@ const NotificationsPage = () => {
 		<Sidebar user={authUser} />
 	</div>
 			<div className='col-span-1 lg:col-span-3'>
-				<div className='bg-white rounded-lg shadow p-6'>
+				<div className='bg-white rounded-lg shadow py-6 px-3 md:px-6'>
 					<h1 className='text-2xl font-bold mb-6'>Notifications</h1>
 
 					{isLoading ? (
