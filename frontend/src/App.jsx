@@ -10,7 +10,7 @@ import NotificationsPage from "./pages/NotificationsPage";
 import NetworkPage from "./pages/NetworkPage";
 import PostPage from "./pages/PostPage";
 import ProfilePage from "./pages/ProfilePage";
-import SignUpPage from "./pages/auth/SignupPage";
+import SignUpPage from "./pages/auth/SignUpPage";
 
 function App() {
 	const { data: authUser, isLoading } = useQuery({
